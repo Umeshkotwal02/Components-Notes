@@ -1,0 +1,57 @@
+### Notification In Firebase ###
+const firebaseConfig = {
+  apiKey: "AIzaSyA-fvXSD78V2805UTE_kemN7ra1RtPeSEI",
+  authDomain: "app-9946c.firebaseapp.com",
+  databaseURL: "https://app-9946c-default-rtdb.firebaseio.com",
+  projectId: "app-9946c",
+  storageBucket: "app-9946c.firebasestorage.app",
+  messagingSenderId: "375657658200",
+  appId: "1:375657658200:web:420376f0103fd36d87d72d"
+};
+
+Doc : https://firebase.google.com/docs/cloud-messaging/js/client?_gl=1*te2s7o*_up*MQ..&gclid=CjwKCAiA3Na5BhAZEiwAzrfagMaV6hMqj6Ab7s00bS3L43qjxC3xLqTW2wgEs1M_teADbBgnAlRymhoCpaQQAvD_BwE&gclsrc=aw.ds
+
+Steps: 1 
+- first import getMessaging 
+- import { getMessaging } from "firebase/messaging";
+
+Step 2 :
+- create messaging name variable
+- export const messaging = getMessaging(app);
+
+Step 3 :  
+- we have to want permission on web Notification (so we want Access the registration token identify Notification)
+- for it set function in at App.js useEffect:
+- async function requestPermission() {
+    const permission = await Notification.requestPermission( )
+    if(permission === 'granted'){
+      // Generate Token
+    }else if(permission === 'denied')
+      alert("User denied Notification permission")    
+  }
+
+Step 4 :
+- Now we Generate Token for it impoet getToken method
+-   if(permission === 'granted'){
+      // Generate Token
+      getToken(messaging, {vapidKey: '' }) 
+}
+
+- to get token go to firebase project -> project setting -> go tab -> cloud messaging -> Web configuration -> Web Push certificates -> Generate key pair -> Now we get token -> copy that, paste in vapidKey 
+
+Step 5 :
+- we got eror create file some create that ('http://localhost:3000/firebase-messaging-sw.js'):
+- Create file for cloud messaging
+- go to public folder create file <- firebase-messaging-sw.js ->
+- this file name we got in error we got file name
+- Now log the Token and we Got the Token 
+
+step 6 :
+- we have to add handler to handle the function in  firebase-messaging-sw.js file
+- in there copt past code just and change the firebase configuration
+
+use background messaging here by official side many problem here we have to set and learn it proper
+
+
+step 7;
+sent custom message from server to database and then the user get Notification devise also close.

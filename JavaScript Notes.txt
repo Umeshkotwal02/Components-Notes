@@ -1,0 +1,2537 @@
+< -- Introduction -- >
+JavaScript created by Brendan Eich at Netscape in 1995.
+JS when created called live-script.
+JS is Light-weight programming language.
+JS is Scripting language.
+JS is Interpreted programming language.
+Object Oriented Programming Language.
+Case sensitive programming language.
+Dynamically Typing language Because, the type of a variable is checked during run-time.
+All Popular web browser like chrome, fire-fox support to JavaScript they provide built in execution environment and also execute at server side.
+Structure Programming Language.
+Feature :- like displaying timely content, interactive map, animated 2d-3d graphics,scrolling video jukeboxes.
+
+< -- Application -- >
+Client Side Validation and Server Side Validation.
+dynamic drop down menu.
+Display Date & Time.
+Display Pop-up Box And Dialog Box.  
+
+<-- Script Put -->
+1. Between HEAD section
+  <head>
+  <title> Head </title>
+  <script type="text/javascript">
+   //Code
+  </script>
+  </head>
+
+2. Between Body Section
+   <body>
+   <script type="text/javascript">
+       Between Body Section 
+   </script>
+   </body>
+
+3. External JS
+   create external javascript file with file_nm.js extension. Ex: script.js
+   and link it in head section write above link
+   <head> <title> External </title>
+      <script type="text/javascript" src="script.js"></script>
+   </head>
+   - The benefit of separate javascript file is browser download it and store it in cache.
+   - link jS file is in end of body</body> tag is best way. 
+
+< -- Comment -->
+  1. Single line Comment
+     // Hello this is single line comment
+
+  2. Multi-Line Comment
+      /* this is multiple-line
+         Comment used for code
+         description */
+
+< -- Variable -->
+- Name given to location in memory which use to hold value.
+- Variable are Containers for Storing Information.
+- store different-diff datatype in variable.(string, array)
+- Variables can hold values of different types during runtime so JS is called dynamically typed language.
+- Variable type check at RunTime so JS is dynamically typed language.
+
+- Rules Declare Variable 
+  1. Name must start with a letter (a to z or A to Z), underscore( _ ), or dollar( $ ) sign.
+  2. After first letter we can use digits (0 to 9), for example value1.
+  3. Reserved Word can not be define as variable Name. Ex. for if break etc..
+  4. Case sensitive Umesh | umesh both diff variable.
+       Ex. var a=10;
+           let name="Umesh";
+
+- Two Types of variable 
+  1. Local Variable
+    :- A JavaScript local variable is declared inside block or function. It is accessible within the function or block only.
+     <script>  
+         function abc()
+         {  
+         var x=10; //local variable  
+         }  
+    </script>
+
+  2. Global Variable
+    :- A JavaScript global variable is accessible from any function. A variable i.e. declared outside the function or declared with window object is known as global Variable.
+      <script>  
+      var data=200;  //global variable  
+      function a(){  
+      document.writeln(data);  
+      }  
+      function b(){  
+      document.writeln(data);  
+      }  
+      a();//calling JavaScript function  
+      b();  
+      </script>
+      
+< -- Var, Let, Const  Variable-- >
+   1. Var- Global Scope Variable
+    - "var" is the oldest way to declare a variable in JavaScript, it has global scope.
+    - before ES6 var is used
+    - var is functional and global scope while let & const are block scope.
+    - var can update and redeclare within it's scope.
+    - These variables are hoisted.
+    - its default value is “undefined”.
+        Ex. var a=55;
+            var b="umesh";
+            var a="p";     
+ 
+   2. Let- Block Scope variable
+    - "let" was introduced in ECMAScript 6 (also known as ES6) as an alternative to "var".
+    - These variable has block scope.
+    - meaning they are only accessible within the block in which they were declared
+    - Let can be update but not redeclare.
+       Ex. {
+             let b='this';
+             console.log(b); 
+           }  output:this
+-
+             let b=85;
+           {
+             let b='this';
+             b=5;           //updated
+             console.log(b); 
+           }
+             console.log(b)
+             output: 5 | 85
+     
+
+   3. Const - constant value
+    - const can not be updated and re-declare. 
+    - const also block of code.
+       Ex. const author="umesh"; - ok 
+           let author="kotwal";  - ERROR
+           author="kotwal";      - ERROR
+
+< -- Datatype -->
+1. Primitive Datatype : (NN SS BB U)
+   Null, Number, Symbol, String, Boolean, Bigint, Undefined.
+   using typeof operator find datatype of variable. ex:- console.log(typeof a)
+2. Non-Primitive Datatype :
+   Object, Array, Regular Expression.
+
+- Different Between Null & Undefined
+- Undefine means variable is declare but not assign value and null means variable is declare and given the value is Null.
+
+<-- Operators -->
+
+1. Arithmetic Operator :
+   +  Addition
+   -  Subtraction
+   *  Multiplication
+   ** Exponentiation : 10**3 means 10*10*10
+   /  Division
+   %  Modules
+   ++ Increment
+   -- Decrement
+    
+     :let a=10;
+      let b=05;                        Output
+      console.log("a+b= ",a+b);         15
+      console.log("a-b= ",a-b);         05
+      console.log("a*b= ",a*b);         50
+      console.log("a/b= ",a/b);         02
+      console.log("a**b= ",a**b);       100000
+      console.log("a++= ",a++);         10          but actual value is 11
+      console.log("++a= ",++a);         12          11 + 1 =12
+      console.log("a--= ",a--);         12          but actual value is 11
+      console.log("++a= ",++a);         12          11 + 1 =12
+
+2. Assignment Operator
+   =           X=Y
+   +=          X=X+Y
+   -=          X=X-Y
+   *=          X=X*Y
+   /=          X=X/Y
+   %=          X=X%Y
+   **=         X=X**Y
+
+3. Comparison Operator / Relational Operator
+   ==    equal to                  
+   !=    Not Equal to
+   ===   equal value and type
+   !==   not equal value or not equal type
+   >     greater than
+   <     less than
+   >=    greater than equal to
+   <=    less than equal to 
+   ? :   ternary operator 
+
+<-- Different Between == and === -- >
+  == : Double equals (==) will try to convert the values to the same data type and then try to compare them.
+     : Compares two variables without caring about their datatype.
+     : It returns true if variables are the same, without caring about its datatype.
+     : It performs the type conversion when both the variables are of different type.
+       Ex: (l)                                            (2)
+           let string = "10";                             let string = "umesh";
+           let number = 10;                               let number = 10;
+           console.log(string == number);                 console.log(string == number);
+           Output: True                                   Output: False
+
+ === : Triple equals (===) strictly compares the value and the data-type.
+     : Compares two variables along with their datatype.
+     : It returns true only if both the values and data types are the same.
+     : It does not follow type conversion if both variables have a different datatype
+       Ex: (1)                                            (2)
+           let string="10";                               let number = 10;
+           let number = 10;                               let number = 10;
+           console.log(string === number);                console.log(number=number);
+           Output: False                                  Output : True
+ 
+ Both are comparison operators. The difference between both the operators is that “==” is used to compare values whereas, “ === “ is used to compare both values and types.
+ Example:
+ var x = 2;
+ var y = "2";
+ (x == y)  // Returns true since the value of both x and y is the same
+ (x === y) // Returns false since the typeof x is "number" and typeof y is "string"
+ 
+
+4. Logical Operator
+   1. AND && : Both Condition true      T + T = T | T + F = F | F + T = F | F + F = F
+   2. OR  || : at least one condition is true   T + T = T | T + F = T | F + T = T | F + F = F
+   3. NOT !  : it make true to false and false to true  !false : output true  | !true : output false 0(true) 1(false)
+
+5. Ternary operator 
+- condition ? exp1:exp2  
+- evaluate the condition and execute block of code bases on the condition.
+   <script>
+       let age=parseInt(prompt("Enter your age"));
+       document.write((age>=18) ? "you can vote" : "you can not vote");
+   </script>
+
+< -- Dialog Box -->
+1. Prompt Box
+   Is used prompt accept value from user.
+   when prompt box is pop-up user have click either OK or Cancel.
+   if click on OK its give user input return, if click on Cancel method return null Value.
+   Prompt box give always "String" value returns.
+   To convert String to number use: parseInt()
+    Ex :  <script>
+             let a,b,c;
+             a=parseInt(prompt("Enter a value"));
+             b=parseInt(prompt("Enter b value"));
+             c = a + b ;
+             alert("a +b = "+c);
+          </script>
+   
+2. Alert Box         
+   alert box is used if you want to make sure information come through to the user.
+   when it pop-up its show Ok button.
+   <script>alert("Hello I am Alert Box");</script>
+   use + { alert(num + " positive num"); }
+
+3. Confirm 
+   show message to user show ok and Cancel button return true for ok and false for Cancel.
+   let msg = confirm("Do you want confirm this info")
+   
+< -- Control Flow Statements -- >
+- To Decide what should be flow of the execution of program.
+1. Selection / Condition
+2. Branching
+3. Looping
+
+< -- Condition/Selection Statement -->
+
+1. if statement :
+    if condition is true than block of code is executed otherwise these statement will skipped.
+    use for check single condition.
+    syntax:
+      if(condition) {
+          //execute this code
+      }
+
+2. if-else statement
+    condition is true or false.
+    syntax: 
+       if(condition){
+        //code be execute   
+       }
+       else{
+          //code be execute
+       }
+
+3. else-if statement | else if Ladder
+     some we want to keep rechecking set of condition one by one until one match 
+     check multiple condition.
+     syntax: 
+        if(condition 1){
+            //code
+        }
+        else if(condition 2){
+            //code
+        }
+        else if(condition 3){
+            //code
+        }
+        else if(condition 4){
+            //code
+        }
+        else{
+            //code
+        }
+
+< -- Branching Statement -- >
+4. Switch Statement : 
+- Switch Case Statement is alternative to if-else,else-if..ladder
+- if certain condition is met we use break to stop code Execution.
+- Switch Expression will be integer or value.
+- if value of expression is match with any case that case will be execute and control move out outside the switch case statement. 
+- In at least default Statement Execute.
+    Syntax:
+       switch(expression)
+       {
+          case constant1;
+          break;
+            case constant2;
+          break;
+            ...
+          default:
+           break;
+       }
+
+Note: (/[0-9]/.test(variable_name));
+      (/[a-zA-Z]/.test(variable_name));
+
+< -- Break & Continue Keyword -- >
+- when we use break keyword that time execution end their.
+- when we use Continue Keyword that the statement will skipped.
+- Example:- let total =0;
+            let num = 10;
+            for(let i=0;i<=num;i++){
+             if(i===4)
+             break;
+             total = total + i
+             }
+             console.log(total);
+- Example:-   let total=0;
+              let num = 10;
+              for(let i=0;i<=num;i++){
+                if(i===4)
+                continue;
+                total = total + i
+              }
+              console.log(total);    // Output: 51
+
+
+< -- Loops -->
+- Loops are used to performs repeated action.
+- Loops can execute a block of code a number of times.
+- using loops we do not write same code again & again.
+1. for loop
+- where we need to execute some part of code until the given condition is satisfied.
+- called pre_tested loop
+   syntax: 
+       for(statement 1 ; statement 2 ; statement 3){
+         //code to execute
+       } 
+- state 1 executed one time.
+- state 2 is condition base on which the loop runs(loop body is execute).
+- state 3 is is execute every time the loop body is execute.
+      Ex. for(let i = 0; i < 5; i++){
+          console.log(i);}
+         - first state1 execute after state 2 execute and print console.log after execute state 3 and goes state 2.
+- In for loop print output use +variable_name 
+
+2. For/in:
+  :the properties of an object
+   syntax : for(key in object){
+             // code }
+   look thought properties of object.
+   search in object
+   also work with array.
+     let object={
+        umesh:95,
+        ashay:85,
+        chetan:90,
+        meghana:99
+       }
+       for(let a in object){
+        document.write("Marks of " + a + " is "  +  object[ a]);
+       }
+3. For/of
+   loops through the values of an iterable object.
+   for(variable of literal)
+  
+4. while
+   where we don't know the number of iteration in advance.
+   if the condition never get false the loop never end.
+   the condition is checked before execute the statement loop.
+   it follow top-down approach.
+   pre-tested.
+   syntax: 
+   while(condition){
+      //code be execute
+   }
+
+   Ex. print 1 to 10 number.
+    let i=1;;
+        while(i<=10){
+            document.write( i + " ");
+            i++;
+        }
+
+5. do/while
+   the condition is check after execute the statement loop.
+   the statement in loop execute at least one even condition get false.
+   it follow bottom-up approach.
+   post tested. 
+   syntax: 
+       do{
+         //code be execute
+       }
+       while(condition);
+
+      ex. i=10;
+          do{
+            document.write( i + " ");
+            i++;
+          }
+          while(i<=10);
+
+Note: - when number of iteration is know we use FOR loop.
+      - when number of iteration is not know While loop is used.
+   
+< -- Function -- >
+< -- definition, invocation, parameters, return values, Arrow Function -->
+- Function is block of code designed to perform particular task.
+- return value not print it's just return if we want print it we console.log it. or store it in one variable & print that variable.
+1.Parameterized function
+- syntax: 
+  function function_name(parameter){
+           // code to be execute 
+           // parameter work as local variable in fun    
+  }    
+        Example:
+          let x,y;
+                x=2;
+                y=5;
+               function sum(a,b) {
+                return a + b;
+                }  
+   document.write("sum of x and y is", sum(x,y));
+2.Parameter-less function
+  syntax:                            Example:
+    function fun_nm(){               function msg(){
+      //code be executed                document.write("hello")
+    }                                  }
+                                     msg() output:hello
+
+- a code be executed by the function is placed in side the curly brackets:{ }
+- function is execute when it is called.        
+- one define function can call many time.
+- so using function code is reusable.
+- function for used for logic separate.
+- When an event occurs (when a user clicks a button)
+- Return statement: This is optional and is used to specify the value that the function should return to the caller. If a function doesn't return anything, it implicitly returns undefined.
+- Return value:
+   - When JavaScript reaches a return statement, the function will stop executing.
+   - Function can also return also return a value. The value is "returned" back to caller.
+   
+Invoking Function:-
+- Function invocation is way to use the code inside the function.
+- The code inside a function is not executed when the function is defined.
+- The code inside a function is executed when the function is invoked.
+
+< -- Arrow function : --> 
+- Arrow functions were introduced in ES6.
+- Arrow functions provide us with a new and shorter syntax for declaring functions.
+- Ex. let myFunction = (a, b) => a * b;
+- syntax for defining function expressions using =>
+variable fun_nm=(para)=>{  // code }
+const  sum=(a,b)=>{
+let c=a+b;
+return c;
+}
+let y=sum(1,3);
+document.write(y);  output=4
+
+syntax:
+const functionName = ( param1, param2 ...) => {
+//do some work
+}
+
+Q- What is an Immediately Invoked Function in JavaScript?
+-An Immediately Invoked Function Expression (IIFE) in JavaScript is a function that is defined and executed immediately after its creation. It's a way to create a local scope for variables and functions, preventing them from polluting the global namespace
+
+< -- String -- >
+String is used to store and manipulate text.
+String is created using 3 ways:
+1. by " " double quotes:
+    let name="umesh";
+    console.log(name);
+
+2. by ' ' single quotes
+    let name='akshay';
+    console.log(name);
+
+3. by ` `back-tic
+ < -- Template literal: -- >
+   use back-tic instead of quotes to define string. call template literal
+   we can also write double quotes and single quotes in backtic.
+   ex. let name=`akshay 'is' "umesh" brother`;
+       console.log(name);
+     < -- ${variable} symbol-- >
+       let boy1="umesh";
+       let boy2="akshay";
+      console.log(`${boy1} is brother of ${boy2}`);
+
+- String Interpolation ${variable}
+  we can insert variable directly in template literal this is called string Interpolation.
+
+- Escape Sequence Character: backslash \
+  we can write single quotes in single quotes. using backslash.
+  let fruit = "Bana\"na"
+  console.log(fruit);        output: Bana"na
+  console.log(fruit.length); output: 7
+
+  also we can write double quotes in double quotes.using backslash. like same.
+  \n - new line
+  \t - table
+  \r - carriage return;
+
+  < -- String Properties & Method -- >
+   - String is immutable:
+   - means we can not be update string.
+   - To access index of array & string we use [0]
+     ex.  let string = 'Umesh' 
+          console.log(string[0]);
+          console.log(string[2]);
+          console.log(string[3]);
+     ex. let fruit = ['apple','banana','mango']
+         console.log(fruit[0])
+
+  1. name.length
+  2. name.toUpperCase()
+  3. name.toLowerCase()
+      Example:  let name = 'Umesh Kotwal';
+                console.log(name.length);        
+                console.log(name.toUpperCase());
+                console.log(name.toLowerCase());
+
+  4. name.slice(begin-index,end-index) :
+    - used to fetch the part of the string and returns the new string..
+     index start with 0
+                01234
+      let name="Umesh";
+      console.log(name.slice(2,4));
+      output: es      : from 2 to 4 the 4 is not include.
+              23
+
+  5. name.slice(2):-       
+     let name="Umeshhhhh";
+     console.log(name.slice(2));
+     output: eshhhhh    : from 2 to end
+             2345678
+   
+  6. name.replace("ori_nm","replace_name")
+
+     let name='Umesh Bhau';
+     console.log(name.replace("Umesh","Lalu"));
+     output: Lalu Bhau
+
+  7. var1.concat(var2)
+     it provide combination of two or more string.
+     we can use + also to concat the string.
+     
+     let boy1 = "Umesh";
+     let boy2 = "Ashay";
+     console.log(boy1.concat(boy2));
+     console.log(boy1.concat(" and ", boy2 ," Both Are Brother"));
+
+  8.name.trim() 
+    its remove while space of variable right & left;
+    let name="   umesh   "
+    console.log(name.trim());
+    output:umesh
+
+  9.name.split(" ")
+    It splits a string into substring array.
+    -returns that newly created **array**.
+    -split depend on space
+    var str="This is JavaTpoint website";
+        document.write(str.split(" "));
+        output:This,is,JavaTpoint,website
+   let a='umesh Pralhad Kotwal'
+   let e=a.split("")
+        console.log(e);
+   output :['u', 'm', 'e', 's', 'h', ' ', ' ', 'P', 'r', 'a', 'l', 'h', 'a', 'd', ' ', 'K', 'o', 't', 'w', 'a', 'l']
+
+
+  10. name.charAt(index)
+      let name = "umesh"
+      console.log(name.charAt(2));
+
+- to access character in order: 
+  let name='Umesh';
+  console.log(name[0]);
+  console.log(name[2]);
+  console.log(name[3]);
+    
+ 11.name.indexOf(str)
+  - give index of given string.
+  - index start with 
+        let str="This is JavaTpoint websit  e.";
+        document.write(str.indexOf("JavaTpoint"));
+
+ 12.num.toString()
+    convert number object to String.
+    let num=15;
+        console.log("Decimal",num.toString());
+        console.log("Binary",num.toString(2));
+        console.log("Octal",num.toString(8));   
+13. to reverse the String:
+    let name = "Umesh Is Good Boy";
+    let reversedName = name.split("").reverse(name).join("");
+    console.log(reversedName);
+
+14. name.includes()
+- includes is check Text is include in String.
+Example:-
+ // Using includes()
+console.log(str.includes("JavaScript")); // Output: true
+console.log(str.includes("Java"));       // Output: true
+console.log(str.includes("Python"));     // Output: false
+
+15. name.startsWith()
+- check string is start with text.
+- also check using write start length text. 
+// Using startsWith()
+console.log(str.startsWith("Hello"));    // Output: true
+console.log(str.startsWith("JavaScript"));// Output: false
+console.log(str.startsWith("Java", 7));  // Output: true
+
+16. name.endsWith()
+- check string is End with text.
+- also check using write End length text.
+// Using endsWith()
+console.log(str.endsWith("World!"));     // Output: true
+console.log(str.endsWith("JavaScript"));// Output: false
+console.log(str.endsWith("JavaS", 11));   // Output: true
+
+Example:- Extract amount of given String and check amount type is number. 
+let str = 'Please, Give me Rs 1000';
+let amount = Number.parseInt(str.slice(19));
+console.log(amount);
+console.log(typeof(amount));
+
+
+
+- String is immutable:
+- means we can not be update string.
+    let name="   umesh   "
+    console.log(name.trim());      output:umesh
+    console.log(name);             output:"   umesh   "
+ - We can not change original String.
+
+< --Array -- >
+- Array is an Object.
+- Represent collection of similar or dissimilar datatype.
+- array is Store Multiple Value in Single Variable.
+- Arrays can hold any type of data, including numbers, strings, objects, or even other arrays. 
+- Array index, starting from 0 for the first element.
+- we can write Object in array and array in object. & array in array called nestedArray
+- we access array with index[i]
+- Example: const fruits = ["Mango","Banana","Apple","Grapes"];
+           const a = [25,"Umesh",false,0.777];
+           cons num = [0, 7, 25, 08, 99];
+           console.log(a);
+           console.log(num.isArray)
+- To check is array is Array.isArray(arr_nm) Method
+- Example:- const a = [25,"Umesh",false,0.777];
+            console.log(Array.isArray(num))
+
+
+- Accessing Value:
+  console.log(a[0]); :- 25
+  console.log(a[1]); :- "Umesh"
+  console.log(a[2]); :- false
+  console.log(a[3]); :- 0.777
+  Index Start with Zero. length start with 1
+
+
+- Finding the Length:
+  length start with 1
+  console.log(a.length); Output:- 4
+
+- Changing the Value
+  num[1]=8;
+  a[2]=its true
+- Array are mutable, they can changed and when string is immutable, not changed;
+- We can modify it "in place", adding, removing, or changing elements.
+- array return new array.           
+
+- Array is object. we write object is array.
+- To add an object to an array, you can use the push() method in JavaScript.
+  num=[1,2,3,4,5,6,7];
+  console.log(typeof(num));
+  output: object
+
+// Print Array using for loop
+let names = ["Umesh", "Akshay", "Chatan", "Rohit", "Meghana"];
+for (let i = 0; i <= 3; i++) {
+    console.log(names[i]);
+}
+
+// Print all Array using for loop (.length)
+  let names = ["Umesh", "Akshay", "Chatan", "Rohit", "Meghana"];
+        for (let i = 0; i < names.length; i++) {
+            console.log(names[i]);
+        }
+
+// to clone array
+     const a = [25,"Umesh",false,0.777];
+     let b=a.slice(0)
+     let c=[].concat(a);
+     console.log(a);
+     console.log(b);
+     console.log(c); 
+// if we declare array with const we can update with method like push() it bcz it's mutable
+< -- Method of Array -- >
+1. num.toString()
+   - to String() method use for convert Array to String.
+   - to String() returns array in string formate.
+   - Example:
+            let num=[1,25,4,8,7];
+            b=num.toString();
+            console.log(b);
+2. num.join(" ")
+  - join method is use to join array using separator.
+  - join(" ");
+  - Example:
+         let num=[1,25,4,8,7];
+         b=num.join(" and ");
+         console.log(b);
+         output: 1 and 25 and 4 and 8 and 7
+  - Join return array as String
+  - typeof b is String
+3. num.pop()
+   - pop() is use for remove last element in array.
+   - pop() return last element
+   - let num=[1,25,4,8,7];
+         b=num.pop();
+         console.log(num);  // 1,25,4,8
+         console.log(b);    // 7
+
+4. num.push()
+   - push() method is use for add element in array at last.
+   - push() return new array length.
+   -  let num=[1,25,4,8,7];
+            b=num.push(2);
+            console.log(num);  // 1,25,4,8,7,2
+            console.log(b);    // 6
+
+
+5. num.shift()
+   - shift() is use for remove first element in array.
+   - return that removed first element
+   : let num=[1,25,4,8,7];
+            b=num.shift();
+            console.log(num);  // 25,4,8,7
+            console.log(b);    // 1
+
+6. num.unshift()
+   - unshift() is use for add first element in array.
+   - unshift() return length of array.
+   : let num=[1,25,4,8,7];
+            b=num.unshift(3);
+            console.log(num);  // 3,1,2 5,4,8,7
+            console.log(b);    // 6 length of array
+7. delete()
+ - delete is operator.
+ - array element can be delete using delete operator.
+ - Example:  let num=[1,25,4,8,7];
+             delete num[2];
+             console.log(num);  // 1,25,empty,8,7
+             console.log(num.length);    // 5 length of array delete can not change the length of array.
+ - Delete Can not Change The Length of Array. *
+
+8. num.concat() - used two join to the given or more array.
+   Example:
+            let num=[1,25,4,8,7];
+            let name=["Umesh","Akshay","Rohit","Chetan","Meghana"];
+            let a=[2,5,7,8,9,3,6,2];
+            abc=num.concat(name);
+            console.log(abc);
+            console.log(abc.length);
+            console.log(num.concat(name,a));  // 1,25,4,7
+            console.log(num.length);
+   - can not change length of original array;
+
+9. num.sort() 
+   -  used for sort() the array alphabetically.
+   -  Example:
+      let num=[1,25,4,8,7];
+      let name=["Umesh","Aksha
+      y","Rohit","Chetan","Meghana"];
+      let a=[22,51,78,84,92,3,6,2];
+      console.log(name.sort());    // output:'Akshay', 'Chetan', 'Meghana', 'Rohit', 'Umesh'
+      console.log(num.sort());     // output:1, 25, 4, 7, 8
+      console.log(a.sort());       // output:2, 22, 3, 51, 6, 78, 84, 92
+- IMP Note : sort is sort the array by alphabetically so if array is number its to alphabetically like: 1,2,22,25,31,35,78
+             they are not like sort descending order.
+- Interview Question: using sort the number array can output ascending or descending ?
+                 Ans: array sort in alphabetically order 2,22,23,30,35,77
+
+10. sort(compare)
+     create function array
+     let compare = (a, b) => {
+     return a - b
+     }
+     let num = [551, 22, 3, 14, 5, 6, 7, 8, 229]     
+     console.log(num.sort(compare));
+     output: 3, 5, 6, 7, 8, 14, 22, 229, 551
+
+11.splice()
+   - It add/remove elements from the given array.
+   - syntax: 
+         num.splice(indexof_start_1 , want_to_delete_element_number_2, want_to_add_that_all_element_3);
+   - Example:
+           const num=[2,3,5,89,2,5,78];
+           splice_fun=num.splice(2,4,2001,2003,2004,2005,2007);
+           console.log(num);            output:[2, 3, 2001, 2003, 2004, 2005, 2007, 78]
+           console.log(num.length);     output: 8
+           console.log(splice_fun);     output: return deleted array : [5, 89, 2, 5]
+   - splice return the deleted array.
+
+12. slice(start_index to end_index)
+    slice(start_index);
+   - It create a new array. from given previous array
+   - slice is can not update original array its return new array. 
+   - to see that we print that new array.
+   - Example:
+     const num = [1, 2, 7, 10, 11, 12, 13, 14, 15];
+     num.slice(2); // we change array but for get that output we print new array
+     newNum=num.slice(3); // we change array but for get that output we print new array
+     let newNum1 = num.slice(3, 6) // its not include last index //output:[10, 11, 12]
+     console.log(newNum1);
+     console.log(num);       ///output: [1, 2, 7, 10, 11, 12, 13, 14, 15]
+   
+1. num.reverse
+- reverse the array.
+- return that array
+- Example :
+  const num = [1, 2, 7, 10, 11, 12, 13, 14, 15];
+  num.reverse(num);
+  console.log(num);
+
+
+<-- Loops through Arrays -- >
+- array can looped by using the classical javascript for loop or through some other methods discuss below. 
+   classical for Loops :
+   for(let i=0;i<num.length;i++){
+      // code be executed
+            }
+1. For Each Loop
+    - call the function one for each element.
+    - syntax: num.forEach((value,index,array)){ 
+                //code;
+              }
+    - example:
+     const num = [2, 3, 4, 5, 6, 7, 8, 9, 77];
+     num.forEach((element) => {
+         console.log(element*element);
+      }
+     )
+
+2. For of : most used
+ - is short-cut to accept array element.
+     const num = [2, 3, 4, 5, 6, 7, 8, 9, 77];
+     for(let i of num){
+      console.log(num);
+     }
+
+  - manually access array elements:
+  - let num = [1,6,7,9,8,9,8,3,4,3,4,9,7,8,4,5,6,32,7]
+   for(let i=1;i<=3;i++){
+      console.log(num[i]);
+        }
+
+  - const num = [1,2,3,4,5,6]
+    const newnum=[];
+    for(let num1 of num){
+      newnum.push(num) 
+    }
+    console.log(newnum);
+
+3. Array.from 
+- used to create array of any other object.
+- used for covert html collection.
+     let num = "Umesh";
+     let arr= Array.from(num);
+     console.log(arr);
+     output : 'U', 'm', 'e', 's', 'h'
+
+4. For...in
+- is used to get key from array.
+
+Exercise:- 
+1. Create an array of numbers and take input from user to add numbers to this array.
+  let numArray = [];
+  let numOfElements = parseInt(prompt("How many numbers do you want to add to the array?"));
+
+  for (let i = 0; i < numOfElements; i++) {
+      let userInput = parseInt(prompt("Enter a number:"));
+      numArray.push(userInput);
+  }
+
+  console.log("The array is:", numArray);
+
+2. Keep adding numbers to the array in ① until 0 is added to the array
+  let num = [];
+  let In;
+  do {
+      In = parseInt(prompt("Enter Number (Enter 0 to Stop):"));
+      if (In !== 0) {
+          num.push(In);
+      }
+      console.log(num);
+  } while (In !== 0);
+
+
+< -- Object -- >
+- Objects store key,values pairs. 
+- where the keys are strings and the values can be any data type (including primitives and other objects).
+- object do not have index.
+
+- EX:-  const persons = {
+        id:"1",
+        Fname:"Umesh",
+        Lname:"Kotwal",
+        hobbies:['cricket','reading','traveling']
+        }
+        console.log(persons);
+        console.log(persons.Fname);
+        console.log(persons.hobbies);
+        persons.gender='Male'
+        console.log(persons)
+        console.log(persons["Fname"])
+
+- to access object key's value(properties) we use don. notation. :console.log(persons.Fname);
+- we edit object we use dot. & [] square natation.
+- in [] always write in "string" form""
+- space allow only when write in string form "person gender" | person gender- not_allow
+- to add properties in object we also use dot. and [ ] square bracket notation.
+        persons["person gender"] = 'Male'
+        console.log(persons);
+OutPut:- {id: '1', Fname: 'Umesh', Lname: 'Kotwal', hobbies: Array(3), person gender: 'Male'}
+
+- for access object we use 2 methods
+  1.for in loop
+  2.Object.keysfu
+
+       1. for(keys in persons){
+          console.log(keys);  // only keys access
+        }                     //output: id,Fname,Lname,hobbies
+
+       2. for(keys in persons){
+          console.log(persons[keys]);   // only values acces
+             }               // Output: 1,'Umesh', 'Kotwal',['cricket','reading','traveling']
+
+       3. for(keys in persons){
+          console.log(`${keys}: ${persons[keys]}`);
+        }                    // Output :  id:"1",
+                             // Fname:"Umesh",
+                             // Lname:"Kotwal",
+                             // hobbies:['cricket','reading','traveling']
+
+//Object Inside Array & add another object
+   const users=[
+      {id:1,Name:"Umesh",gender:'Male'},
+      {id:2,Name:"Akshay",gender:'Male'},
+      {id:3,Name:"Meghana",gender:'Female'}   
+     ]     
+     
+     users.push({id:4,Name:"Meghana",gender:'Female'});
+     console.log(users);
+                             
+< -- Higher Order Array Methods -- | Functional Programming Concepts >
+1. map 
+  create a new array by performing some operation on each array element.
+  we use map to create new array.
+  when we want to make any operation we use for each loop.
+  map return new array.
+  syntax: 
+      const num=[10,15,25];
+      num.map((values,index,array)=>{
+         return values * index; // operation we perform
+      })
+      Example:
+      let arr = [1,2,3,4,5,6,7]
+      let mul = arr.map((item) => {
+      return 2 * item;
+      });
+
+console.log(fu); 
+      
+2. Filter
+   - filter a array with values that passes the test and create a new array.
+     let num=[1,2,4,8,5,6,9,25];
+     res=num.filter((a)=>{
+      return a % 2 ==0;
+      })
+      console.log(res);
+
+3. Reduce
+   - reduce the array to a single value.
+   - it's return single value
+   - It reduces all the elements of the array to a single value by repeatedly applying a function. 
+   ipt>
+        let arr3 = [1, 2, 3, 5, 2, 1]
+            const reduce_func = (h1, h2) => {
+                return h1 + h2
+            }
+            let newarr3 = arr3.reduce(reduce_func)
+            console.log(newarr3)
+   < ----
+         map- return new Array
+         filter - return new array
+         reduce - return one value
+                                 ---- >
+< -- Developer Tool -- >
+Every Browser some has developer tool make developer life easy:
+
+     1. Element           2. console             3. Network
+ all html elements    all the errors+logs     all network request
+
+ - we can write javascript code in console.log
+ - many method use in console.log
+ 1. console.assert(10>15) - its return error so true check here.
+ 2. console.clear() - clear the console.
+ 3. console.log() - output as msg on console
+ 4. console.table() - display the tabular data
+    Example : names={  umesh:1,
+                       akshay:2,
+                       chetan:3,
+                       rohit:4 }
+                     console.table(names);
+   We can see object in table format 
+ 5. console.warn("thsi is warning for you")
+ 6. console.error("this s error");
+ 7. console.info(" give information some"); 
+ 8. console.time() cheak time of task 
+    Ex. console.time(25);
+        let p = 25;
+        console.timeEnd(p);
+        output:25: 0.011962890625 ms
+
+9. console.dir() - show element as object with its properties 
+
+< -- BOM -- >
+- Browser object model Represent addition object provide by browser(host environment) for working with everything except the document.
+- the function alert,confirm and prompt are also part of BOM.
+
+< -- Window Object -- >
+- we open a any tab in browser there is by default one object that always present in Browser its Window Object.
+- it's browser object(not Javascript) and automatically created by Browser.
+- it's global object with lots of properties and methods. 
+-                   Window
+             DOM     BOM    JavaScript-Core
+
+< -- DOM -- >
+- When web page is loaded,the browser create a Document Object Model (DOM).
+- The DOM is a W3C (World Wide Web Consortium) standard.
+- The way to that document content is accessible and modified its call document object model.
+- with object model  javascript can change all html element, attribute and css style and Add new Event.
+- we can access html in javascript in window object in document object thats is model or representation of html that we call Dom.
+- The HTML DOM model is constructed as a tree of Objects:
+- HTML DOM Model:
+                                          Window                     -------------------node
+                                            |
+                                         DOCUMENT                    -------------------node
+                                            |
+                        |----------------  HTML -----------------|            ----------node
+                       HEAD                                     BODY
+                        |                                        |
+              title --------- meta                     div --------------script
+                                                        |
+                                               img ---- h1 ---- p
+
+- Dom refer to html page so all the nodes are object.
+- Types of nodes
+ 1. text node
+ 2. element node
+ 3. comment node
+
+ - In html <html> is root and head & body it's Children.
+- document.body
+  many time document.body return false because script tag not write in ending of </body> tag.
+- document.head
+- document.documentElement
+
+< -- Children of Element -- >
+ child node  : element that direct Children like head and body are direct children of html.
+ Descendant node : all nested element children , their children and so on...
+ Siblings - brothers
+ 
+console.log(document.body.firstChild);             -- : first child property
+console.log(document.body.lastChild);              -- : last child property
+console.log(document.body.childNodes);             -- : all child property
+<body>                                             |    <body><p>this is p tag </p>
+    <p> p tag </>   -----its return firstChild     |    </body>                       ----its firstChild id pmtag
+</body>                   is Text Because of space |
+
+childNodes look like array but its not array to convert that array we use Array.from Method
+
+< -- Sibling -- >
+ - Sibling are nodes they children to same parent. 
+ - <head> & <body> are sibling. they child to same parent <html>
+ - nextSibling
+ - parentNode
+ - parentElement          null is not proper element
+
+  console.log(document.body.firstChild)
+  a = document.body.firstChild
+  console.log(a.parentNode)
+  console.log(a.parentElement)
+  console.log(a.firstChild.nextSibling)
+
+< -- Element Only Navigation -->
+  - we can access the child node direct not nat space text node will be come
+  - firstElementChild
+  - latElementChild
+  - nextElementSibling
+  - previousElementSibling
+
+    const changeBgRed = () => {
+      document.body.firstElementChild.style.background = "red"
+    }
+
+    let b = document.body
+    console.log("First child of b is: ", b.firstChild)
+    console.log("First Element child of b is: ", b.firstElementChild)
+
+< -- Table Navigation -- >
+:https://replit.com/@codewithharry/35tablelinks#index.html
+let t = document.body.firstElementChild.firstElementChild
+console.log(t)
+console.log(t.rows)
+console.log(t.caption)
+console.log(t.head.firstElementChild)
+console.log(t.foot)
+console.log(t.Bodies)
+console.log(t.rows[1].rowIndex)
+
+< -- DOM Methods | Searching The Dom | DOM Manipulation -- >
+1. document.getElementById
+ - this method is used for get element with given "id" attribute.
+ - id must be unique. direct give id name
+ - <body>
+   <div id="navcont">
+       <ul class="ulist">
+           <li>Home</li>
+           <li>About</li>
+           <li>Skills</li>
+           <li>Contact US</li>
+       </ul>
+   </div>
+   <script>      
+       var a= document.getElementById("navcont");
+       a.style.backgroundColor="red"
+   </script>
+   </body>
+
+2. getElementsByClassName
+  - there is same class name given to many so use index. or classical for loop
+  - give direct class name
+  - class are called by index
+  - to access all class element use classical javascript
+  <script>      
+      var a=document.getElementsByClassName("navcont");
+      for(let i=0; i< a.length;i++){
+      a[i].style.backgroundColor='red'}
+   </script>
+
+   A = document.getElementsByClassName("card-body")
+   A[0].style.border="20px solid green";
+
+
+
+3. getElementsByTagName
+   
+    var a= document.getElementsByTagName("img");
+    for (var i = 0; i < a.length; i++) {
+            a[i].style.width = "10px";
+        } 
+-------------------------------------------------
+   var a= document.getElementsByTagName("img");
+   a[0].style.width="110px";
+
+
+4. getElementsByName
+   <input type="text" name="usernm" placeholder="username">
+   <script>      
+   console.log(document.getElementsByName("usernm[0]"));
+   </script>
+
+5. document.querySelector
+  - in query Selector we have to write classname with dot(.) & id with #id1
+  - return the element for the given CSS Selector.
+  - document.querySelector(".this").style.color = "black"
+    document.querySelector(".this").style.background = "red"
+
+6. document.querySelectorAll
+ - in query SelectorAll we have to write classname with dot(.) & id with #id1
+ - Return all element inside an element matching the given Selector.
+ - <script>   
+    console.log(document.querySelector(".this"));
+    var a= document.querySelectorAll(".card-title")
+    a[0].style.color="red";
+    a[1].style.color="green";
+   </script>
+
+< -- matches() ,closest() & contains methods -- >
+
+1. matches(css)
+- match the css element if match return true. 
+means we declare class id in single element so both are match.
+<script>
+    let id1 = document.getElementById("id1")
+    let sp1 = document.getElementById("sp1")
+    console.log(id1)
+    console.log(id1.matches(".class"))
+    console.log(id1.matches(".box"))
+    
+    console.log(id1.contains(sp1))
+    console.log(sp1.contains(sp1))
+    console.log(sp1.contains(id1))
+
+</script>
+
+2. closest(css)
+- to look for nearest ancestor that match the given css selector,the element also checked.
+
+3. contains
+ - return true if element B is inside element A when Element A == Element B.
+
+ < -- console.log and console.dir -- >
+ console.log show html element DOM tree
+ console.dir show element as object with it's property
+
+ < -- inner html & outer html -- >
+ - both allow to get or set content of html.
+ - they return value as String
+ - self_study: we use with id and getElement Methods
+ 1. innerHTML 
+   - allow to get html in side the element as a string(valid for element nodes only).(not valid foor textnode)
+   - inner is valid only for element html nodes. for other node type we can use nodevalue or data 
+   Example:-
+          <span id="first">HEllo get innerHTML </span>
+          first.innerHTML
+     output:'HEllo get innerHTML 
+       set : first.innerHTML="This is set change string"
+    output : 'This is set change string'
+  - We can insert data using innerHTML and we pass that as String.
+  - Set Example:
+    <body>
+     <div id="first"> I am first Element
+     </div>
+     <script>
+     let a = document.getElementById("first");
+     a.innerHTML=a.innerHTML + '<h1>Hello i am inserted </h1>'
+    </script>
+    </body> 
+  
+
+2. outerHTML 
+  - this property contain full html : inner_html + the element it's self
+  EX. 
+     <span id="first">HEllo get innerHTML </span>
+   get : first.outerHTML
+       '<span id="first">HEllo get innerHTML </span>'
+   set : first.outerHTML = "<div>hey</div>"
+output : '<div>hey</div>' 
+
+Example 2 :
+<span name="first">HEllo get innerHTML </span>
+  <p id="abc">opppppppp</p>
+   <script>      
+   let c=document.getElementsByTagName("span")[0]
+   c.outerHTML="<p> This is P tah </p>"
+   console.log(c.outerHTML);    
+</script>
+- Get Example:
+    <div id="first"> I am first Element
+    </div>
+    <script>
+    let a = document.getElementById("first");
+    a.outerHTML=a.outerHTML + '<p>Hello i am inserted </p>'
+    </script>
+
+textContent : 
+      - console.log(document.body.textContent)
+      - provide access to text inside the element: only show text, mins all tag
+      - can access all website as text
+  Example :-
+      <body>
+    <div class="content">This is the body content.</div>
+    <script>
+        let a = document.getElementsByTagName("body")[0];
+        console.log(a.textContent);
+    </script>
+</body>
+
+hidden : 
+    - specify the whether the element is visible or not.
+    - <div class="content" hidden>This is the body content.</div>
+    - this property is hide that content we use hidden.
+
+< -- Attributes Methods -- >
+1. element.getAttribute(name)
+- Method used to get the Value of an attribute.
+Example:
+     <body>
+     <div id="first" class="one">
+         Hey."Umesh This Side"
+     </div>
+     <script>
+         let a=document.getElementById("first");
+         let b = a.getAttribute("class");
+         console.log(b);
+     </script>
+     </body>
+
+2. element.setAttribute(name,value)
+- Method used to set value of attributes.
+ Example:-
+
+ let a=document.getElementById("first");
+    let b = a.setAttribute("class","two");
+    console.log(b); 
+
+3. element.removeAttribute(name)
+- method used to remove attribute
+Example:- 
+  let b = a.removeAttribute("class");
+5. element.hasAttribute(name)
+- Method used to check for exiting attribute available or not.
+    console.log(first.hasAttribute("id"))
+
+6. element.attributes - Method to get the collection of all attributes.
+
+7. date-* attribute
+- we can create customs attribute but the ones starting with "data-Cust_Att_nm" are reserved for programming use. they are available in a property named dataset.
+Example:
+<body>
+<div id="first" class="one two" data-game="pubg" data-player="umesh">
+    Hey."Umesh This Side"
+</div>
+<script>
+    let first = document.getElementById("first");
+    console.log(first.dataset);
+    console.log(first.dataset.game);
+    console.log(first.dataset.player);
+</script>
+
+< -- Insertion Methods -- >
+- To insert element in html we can insert using innerHTML AND outerHTML.
+- Example: 
+    <body>
+    <div id="first"> I am first Element
+    </div>
+    <script>
+    let a=document.getElementById("first");
+    a.innerHTML=a.innerHTML + '<p>this is p tag</p>'
+    </script>
+
+ - Create Element & use method: 
+<body>
+    <div id="first">I am the first element</div>
+    <p> Paragraph Tag </p>
+    <p>UMESh</p>
+    <script>
+        let a=document.getElementsByTagName("p")[0];
+        let div = document.createElement('div');
+        div.innerHTML = '<h1>Hello World!</h1>';
+        a.append(div);
+        a.prepend(div);
+        a.before(div);
+        a.after(div);
+        a.replaceWith(div);
+    </script>
+</body>
+- Here are some method insert element:-
+1.node.append : append at the end of node
+2.node.prepend :insert at the beginning of node
+3.node.after : insert after node
+4.node.before : insert before node
+5.node.replaceWith : replace node with given node.
+
+
+< -- insertAdjacentHTML,Element,Text -- >
+- this method is used to insert html.
+- the first parameter is a code word, specifying where to insert. must be one of the following:
+1. "beforebeging" :- Insert Html immediately before Element
+2. "afterbeging" :- Insert Html immediately after Element
+3. "beforeend" :- Insert Html into Element at End.
+4. "afterend" :- Insert Html after Element.
+- The Second parameter is HTML String.
+
+Syntax:- a.insertAdjacentHTML("beforebegin",'<h1>Beforebegin</h1>')
+ 
+Example:-
+<body>
+    <div id="first">I am the first element</div>
+    <p> Paragraph Tag </p>
+    <p>UMESh</p>
+    <script>
+        let a=document.getElementsByTagName("div")[0];
+        a.insertAdjacentHTML("beforebegin",'<h1>Beforebegin</h1>')
+        a.insertAdjacentHTML("Afterbegin",'<h1>Afterbegin</h1>')
+        a.insertAdjacentHTML("beforeend",'<h1>beforeend</h1>')
+        a.insertAdjacentHTML("afterend",'<h1>afterend</h1>')
+    </script>
+</body>
+
+- insertAdjacentElement
+- example:- 
+  <body>
+    <div id="first">I am the first element</div>
+    <p> Paragraph Tag </p>
+    <p>UMESh</p>
+    <script>
+        let a=document.getElementsByTagName("p")[0];
+        let div = document.createElement('div');
+        div.innerHTML = '<h1>Hello World!</h1>';
+        a.insertAdjacentElement("beforebegin",div)
+    </script>
+</body>
+
+- node.remove
+  a.remove()
+
+< -- className & classList -- >
+- For assign something to element.className, it replaces the whole string of classes.
+- often we want to add/remove/toggle a single class.
+
+- className: 
+- className is uses for assign multiple class to the Element.
+- Example:- first.className="yellow green-text  red"
+
+classList:
+- classList used to add|remove|toggle a single class.
+1.element.classList.add("class") - to add class
+2.element.classList.remove("class") - to remove class
+3.element.classList.toggle("class) - add a class if it does not exist, otherwise remove it. 
+4.element.contains - check for given class available or not (true or false)
+Example:-
+<head>
+<style>
+.yellow{
+    background-color: yellow;
+    color: white;
+}
+.red{
+    background-color: red;
+    color: black;
+    }
+.blue-text{
+    color:blue;
+}
+</style>
+</head>
+<body>
+    <div id="first">I am the first element</div>
+    <p> Paragraph Tag </p>
+    <p>UMESh</p>
+    <script>
+       first.className="yellow green-text red"
+       first.classList.remove('red')
+       first.classList.add('blue-text')
+    </script>
+</body>
+
+< -- setTimeout , clearTimeout & setInterval -- >
+setTimeout:
+- This method executes a function, after waiting a specified number of milliseconds. 
+- setTimeout allow us to run a function after given interval of time.
+  syntax:-
+   let timerID = setTimeout(function, delay , argument1,arg 2)
+         |                      |       |
+  return a timerID           fun_nm   in_milisecond
+ 
+ Example:-
+   1. <script>
+       setTimeout(function(){
+        alert("I am Run aftre 3s")
+       },3000)
+      </script>
+
+   2. <script>
+    function sum(a,b){
+        alert("sum is " + (a + b));
+    }
+
+    setTimeout(sum,3000,2,3)
+    </script>
+
+clearTimeout: 
+- used to cancel the execution (in case we change our mind).
+Example: 
+
+(1) let timerID= setTimeout(sum,3000,2,3);
+   clearTimeout(timerID);
+       <script>
+    function sum(a,b){
+        alert("sum is " + (a + b));
+    }
+
+(2) let timerID = setTimeout(sum,3000,2,3)
+    clearTimeout(timerID)
+    
+(3)  <script>
+    function sum(a,b){
+        alert("sum is " + (a + b));
+    }
+
+    let timerID = setTimeout(sum,3000,2,3)  
+    let a = prompt("Enter run Cleartimeout y or n");
+    if("y" == a){
+    clearTimeout(timerID)
+    }
+    console.log(a);
+    </script>
+
+- setInterval:
+- The setInterval() method repeats a given function at every given time interval. 
+  syntax:
+     setInterval (function_nm,delay_time,arg 1,arg 2)
+
+IMP Note:- setTimeout schedules a single execution after a specified delay, 
+           while setInterval repeatedly executes a function with a fixed interval. 
+Example:
+(1)   <script>
+  let timeID = setInterval(function(){
+    alert("hello")
+  },5000)
+    </script>
+
+(2) argument
+    <script>
+    function sum(a,b){
+    alert("sum of a + b is " + (a + b))
+    }
+    let timeId=setInterval(sum,2000,5,6)
+    </script>
+
+< -- Event -- >
+Event is signal something has happen.
+## Browser Event : 
+when page is load,that is event. when user click a button,that click is event, pressing any key ,closing window etc.
+Events are part of DOM & every element have a certain set of event which can trigger JavaScript code.
+
+Mouse Event :
+onClick
+ondblClick
+onSelect
+onMouseOver & onMouseOut
+onMouseUp
+onMouseDown
+
+Keyboard Event :
+onKeyDown
+onKeyUp
+onKeyPress
+
+Form Event :
+onSubmit
+onFocus
+onReset
+
+DOM Event : Document Contain Load
+
+Event Handling:
+Event can handle with html attribute.
+Example:-
+<input value="hey" type="button" onclick="console.log('Click_Button')" onmouseover="console.log('mouseover_by_user')"
+    onmouseout="console.log('mouseout_by_user')">
+<button onclick="alert('You Click A dangers button')">Click me</button>
+
+Even can also Handle through the onclick property.
+<button>Click me</button>
+
+    <script>
+    document.getElementsByTagName("button")[0].onclick = function(){
+                                                          alert('You Click A dangers button')}
+    </script>
+
+< -- Event Listener -- >
+Event lisner is used for add Event or Remove Event.
+1. addEventListener:
+  - used assign multiple handeler to Event.
+  - addEventListener is used for attach event handler to particular task.
+  - It does not override the existing event handlers
+  Syntax:
+  - element.addEventListener(event, function, useCapture); 
+
+   Example: 1
+    <body>
+    <button id="b1">Click Me</button>
+    <script>
+        function onclick(){
+            alert("You Clicked the button");
+        }
+
+        document.getElementById("b1").addEventListener("click", onclick);
+    </script>
+   </body>
+
+   Note- If we write onclick() with bracate its direct call first function.
+    Ex:- document.getElementById("b1").addEventListener("click", onclick());
+
+    Example: 2
+    <button>Click Me</button>
+    <script>
+    function sum() {
+        var a = parseInt(prompt("Enter A value"));
+        var b = parseInt(prompt("Enter B value"));
+        alert("The sum is: " + (a + b));
+    }
+        document.getElementsByTagName("button")[0].addEventListener("click", sum);
+    </script>
+     
+
+2. removeEventListener:
+- uses to remove the event handler from an element.
+- Example:-
+    <!DOCTYPE html>
+       <html>
+       <style>
+       #myDIV {
+       background-color: coral;
+            padding: 16px;
+          }
+          </style>
+          <body>
+          <h1>The Element Object</h1>
+          <h2>The removeEventListener() Method</h2>
+          <div id="myDIV">This orange element has an onmousemove event handler that displays a random number when you move the mouse inside.
+            <p>Click "Remove" to remove the event handler.</p>
+            <button onclick="removeHandler()">Remove</button>
+          </div>
+          <p id="demo"></p>
+          <script>
+            const myDiv = document.getElementById("myDIV");
+            myDiv.addEventListener("mousemove", myFunction);
+
+            function removeHandler() {
+              myDiv.removeEventListener("mousemove", myFunction);
+            }
+
+            function myFunction() {
+              document.getElementById("demo").innerHTML = Math.random();
+             }            
+            </script>
+       </body>
+       </html>
+
+< -- Event Object -- >
+- When Event Happen the browser creates an Event object, put details into it & passes it as an argument to the handler.
+- When an event occurs in HTML, the event belongs to a certain event object, like a mouse click event belongs to the MouseEvent object.
+
+
+< -- Synchronous Programming -- >
+- Synchronous and asynchronous are two different programming approaches that determine how code is executed in JavaScript.
+- Synchronous actions are the actions that initiate and finish one by one.
+- As a name suggess Synchronous means to be in Sequence.
+- Every statement of code get executed one by one. So, basically a statement has to wait for the earlier statement to get executed.
+- Every line of code waits for its previous one to get executed first and then it gets executed.
+
+ Example:
+ (1)
+ document.write("Hi"); // First 
+ document.write("<br>");
+
+ document.write("Mayukh");// Second 
+ document.write("<br>");
+
+ document.write("How are you ?"); // Third
+
+ Output: Hi 
+         ____________________
+         Mayukh
+         ____________________
+         How are You ?
+
+< -- Asynchronous Programming -- >
+- Is execute Non-Sequentially.
+- Multiple lines of code can be executed at the same time, and the order in which they are executed is not guaranteed.
+- Asynchronous operations, on the other hand, allow tasks to be executed independently of the main program flow.
+- Asynchronous action that actions that we initiate now and they finish later. Ex:- SetTimeout
+- Example: <script>
+    document.write("Hello");
+    setTimeout(function(){
+        document.write("HEllo")
+    }, 2000
+);
+    </script>
+
+< -- Callback Function -- >
+- A callback is a function passed as argument to another function.
+- A callback is a function that is to be executed after another function has finished executing.
+- Why use Callbacks? :
+- Callbacks are used to handle the results of an asynchronous operation in a non-blocking manner, which means that the program can continue to run while the operation is being executed.
+- Asynchronous operations are operations that take a significant amount of time to complete, such as network requests, file I/O, and database queries. If these operations were executed synchronously, the program would freeze and wait for the operation to complete before continuing. This can lead to a poor user experience, as the program would appear unresponsive.
+- Callbacks allow you to continue executing code while the operation is being executed in the background. Once the operation has completed, the callback function is called with the result of the operation. This way, you can ensure that the program remains responsive and the user experience is not impacted.
+
+- Functions that are used as an argument to another function are called callback function.
+- Function inside another function is called callback function. callback function can run after another function has finished.
+- When we pass callback don't write parenthesis () direct write function
+Example:- callbacks
+(1)  function myfun(b){                      // can give Callback name to b  myfun(callback)
+      console.log("My_Fun is running");
+      b();                                   // callback()
+    }
+
+    myfun(function b(){
+      console.log("b is running") 
+    })
+
+(2)  function sum(a,b,callback){
+      console.log(a + b);
+      callback(a,b);
+    }
+
+    sum(20,10, function multi(a,b){
+      console.log(a*b);
+    }) 
+
+Example:- Callback Function
+        - function inside another function
+        (1) function a(){
+            console.log("a is Run");
+            function b(){
+            console.log("b is Run");
+            }
+            b();
+            }
+            a();
+
+        (2) function a(){
+            setTimeout(function(){
+            console.log("a is Run");
+            b();
+            },2000)
+            function b(){
+              console.log("b is Run");
+            }
+            }
+            a();
+
+        (3)  function a(callback){
+             setTimeout(function(){
+             console.log("a is Run");
+             callback();
+             },2000)}
+             (function b(){
+             console.log("b is Run");
+             });
+        (4) //Shradhdha Khapra do't write()
+          function sum(a,b){
+          console.log(a + b);
+          }
+          function cal(a,b,callback){
+          callback(a,b);
+          }
+           cal(5,6,sum)
+- Handling Errors 
+- we can handle callback error by supplying error argument. if error then execute something.
+< -- Callback Hell -- >
+- callbacks are nested within callbacks
+- Callback Hell is a situation in JavaScript where multiple nested callback functions make your code look like difficult.
+- Situation in javascript where callbacks are nested within other callbacks to the degree where the code difficult to read.v 
+- Callback hell is a term used to describe code that is difficult to read and maintain because it uses a lot of nested callback functions. Callback hell can be avoided by using promises or async/await.
+Example:-
+  function gm(callback){
+  console.log("Good Morning");
+  if(callback){
+  callback()}
+  }
+
+  function ge(callback){
+  console.log("Good Evening");
+  if(callback){
+  callback()}
+  }
+  function gn(callback){
+  console.log("Good Night");
+   if(callback){
+  callback()}
+  }
+
+  gm(function(){
+    ge(function(){
+      gn(function(){
+      });
+    });
+  });
+
+- Use Promises + async/await to avoid callback Hell.
+
+Real-Life Examples:
+- Loading images on a website: When you load a website, images can take a while to load, especially if they’re large. If images were loaded synchronously, the website would freeze and wait for each image to load before continuing. With callbacks, you can load the images asynchronously, which means that the website continues to load while the images are being loaded in the background.
+- Handling form submissions: When a user submits a form, it takes time to process the data and send it to the server. If the form submission was executed synchronously, the user would have to wait for the data to be processed and sent before the form can be submitted. With callbacks, you can handle the form submission asynchronously, which means that the user can continue to interact with the form while the data is being processed and sent in the background.
+
+< -- Promises -- >
+- The solution to the callback hell is Promises.
+- The Promises is a "promises of code execution".
+- The code either execute or fails,in both the cases the subscriber will be notified.
+- Syntax: 
+       let promise=new Promise(function(resolve,reject){
+       // execute code
+       })
+- resolve and reject are two callback provide by javascript itself.they are called are like:
+  resolve(value)- if the job is finished successfully.
+  reject(value)- if the job failed.
+- if we print promise like(console.log(promise)) means promise object return new promise construtor has following propertes:
+   1. State:
+     - Initially "pending" , than changes to either ""fulfilled" when resolve is called or "reject" when reject is called. 
+   2. Result
+    - Initially undefine,then changes to value if resolve {resolve(value)} or error when rejected {reject(value)}
+  Example:- 
+  (1.) <script>
+       let promise=new Promise(function(resolve,reject){
+       alert("print promise!..")
+       resolve(56)   //give fullfilled using resolve if not give show pending
+       })
+       console.log(" log print ")
+       </script
+
+< -- Promise Methods .then() & .catch() -- >
+- The promise methods are used to handle rejection or resolution of the promise object.
+
+1. promise.then()
+- this  method handling the rejection or fulfilment of promises.
+- it take two function argument for resolve or reject.
+- The first one gets invoked when the Promise is fulfilled,& the second one (which is optional) gets invoked when the Promise is rejected.
+- if we are intrest in successfully complations, we can provide only one function argument to .then() Ex(2)
+
+syntax: promise.then( function(resolve){*/handle/*}
+                      function(reject)(*/handle error/*)
+                      );
+
+ (1) .then()   // resolve or reject                   |      (2).then() //success
+     let promise = new Promise((resolve,reject)=>{    |          let promise = new Promise((resolve,reject)=>{
+     console.log("Hello!..");                         |          console.log("Hello!..");
+     reject(new Error("Error Come in promise"))       |          resolve(false)
+  // resole(true);                                    |          });
+     });                                              |          promise.then(function(){
+     promise.then(function(){                         |          console.log("success");
+       console.log("success");                        |          });
+       },function(error){                             |
+       console.log("fails");                          |
+     })
+
+  (3) let promise = new Promise((resolve,reject)=>{
+      console.log("Moj hi Moj Hai Jindgi mi to");
+      resolve(true);
+      });
+      promise.then(function() {
+      alert("Yes, Moj Che Bhai");
+      console.log("Success")
+      }).catch(function() {
+      console.log("There was an error");
+      });
+
+2. promise.catch()
+  - it is great way to handler failures and rejection.
+  - it take one function argument only 
+ Example:- 
+  (1) // simple catch Example
+        let promise = new Promise(function(resolve,reject){
+        console.log("try to catch error");
+        reject(false);
+        });
+        promise.catch(function(){
+        console.log("we catches that error");
+        }) 
+:- imp example use both catch and block:
+     (1). let promise = new Promise(function(resolve,reject){
+          let name = "umesh";
+          let fname= "umesh";
+          if(name===fname){
+          resolve("both match")
+          }else{
+          reject("not match both")
+          }
+          });
+          promise.then(function(value){
+          console.log("Successfully Match",value);
+          }).catch(function(error){
+          console.log("Sorry, its not matched",error);
+          });
+     
+     (2). how we promise
+          function a(){
+            return promise = new Promise(function(resolve,reject){
+              setTimeout(function(){
+                console.log("Hello... guys");
+                // resolve(true);
+                reject(false)
+              },2000)
+            });
+          };
+          a().then(function b(){
+          console.log("Yes,bro whats going on ?");
+          },function(error){
+          console.log("fails");
+          })
+   
+   < -- Promise Chaining -- >
+   - we can chain promises and make then pass resolve value to another function like this:
+   p.than(function(result)=>{
+    alert(result);return 2;
+   })than....
+   - the flow of execution is depend on its previous .then means 1st .then execute aftre 2nd than 3rd
+   - Promise Chaining is a simple concept by which we may initialize another promise inside our .then() method and accordingly we may execute our results.
+   - The function inside then captures the value returned by the previous promise.
+   Example:
+   (1) Promise Chaining
+   <script>
+    let p1=new Promise(function(resolve,reject){
+      setTimeout(() => {
+        console.log("1st promise load");
+        resolve();
+      }, 2000);
+    })
+    p1.then(function(){
+      console.log("1st then promise resolve")
+      return new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+          console.log("2nd promise in 1s");
+          resolve()
+        },1000)
+      })
+      .then(()=>{
+        console.log("Secound Promise Done");
+        return new Promise((resolve,reject)=>{
+          console.log("we call 3rd promise");
+          resolve()
+        })
+        .then(()=>{
+          alert("we done all very honest");
+        })
+        .then(()=>{
+          console.log("we done 4th than");
+        })
+      })
+    })
+  </script>
+
+  - In the promises chain is depend on previous .than means its next .than access return value of previous. menas they pass result each other as return value.
+
+  < -- Attaching Multiple Handlers-- >
+  - we can attach multile handler to one promise they don't pass the result to each other, instend they process independen.
+  - they execute Sequencely.
+  1. promise.than(handler 1)         |
+  2. promise.than(handler 2)          ---------- all perform independently
+  3. promise.than(handler 3)         |
+
+  Example:-
+  (1)<script>
+    let promise = new Promise((resolve,reject)=>{
+      setTimeout(()=>{
+        console.log("i am First Promise");
+        resolve(6);
+      })
+    })
+    promise.then(()=>{
+      console.log("HelloQ!!...");
+    })
+
+    promise.then(()=>{
+      alert("hello in am alert")
+    })
+
+    promise.then(()=>{
+      console.log("i am 3rd Handler");
+    })
+  </script>
+
+
+  < -- Promise API -- > aaarr
+  - There are 6 static methods of promises class:
+  - Syntax:
+  - let promise = Promise.all([p1,p2,p3]);
+  
+
+  1. Promise.all(promises)
+  - wait for all promises to resolve and return the array of the their result.
+  - if any one fails, its become error and all other reult are ignored.
+  - the output time depend on the which get more time to execute.
+  - Example :-
+  - let p1= new Promise((resolve,reject)=>{
+      setTimeout(function(){
+        console.log("promise 1...");
+        resolve("Value  1");
+      },1000)
+    })
+
+     let p2= new Promise((resolve,reject)=>{
+      setTimeout(function(){
+        console.log("promise 2...");
+        resolve("Value  2");
+      },2000)
+    })
+
+     let p3= new Promise((resolve,reject)=>{
+      setTimeout(function(){
+        console.log("promise 3...");
+        resolve("Value  3");
+      },3000)
+    })
+    // API
+     let promise_all = Promise.all([p1,p2,p3]);
+     promise_all.then((value) => {
+     console.log(value);
+     })
+
+  2. Promise.allSettled(promise)
+   - wait for all promisento settle and return their result as a array of object with status & value.
+   - in this if error come its not stop and retur array with status & value.
+   - output: 0 : {status: 'fulfilled', value: 'Value  1'}
+             1 : {status: 'rejected', reason: 'Value  2'}
+             2 : {status: 'fulfilled', value: 'Value  3'}
+   
+   Example:- 
+      let p1= new Promise((resolve,reject)=>{
+      setTimeout(function(){
+        console.log("promise 1...");
+        resolve("Value  1");
+      },1000)
+     })
+
+      let p2= new Promise((resolve,reject)=>{
+      setTimeout(function(){
+        console.log("promise 2...");
+        reject("Value  2");
+      },2000)
+      })
+
+      let p3= new Promise((resolve,reject)=>{
+      setTimeout(function(){
+        console.log("promise 3...");
+        resolve("Value  3");
+        },3000)
+      })
+
+      // API 
+      let promise_all = Promise.allSettled([p1,p2,p3]);
+      promise_all.then((value) => {
+      console.log(value);
+      })
+
+
+  3  Promise.race(promises)
+   - wait for the first promise settle/execute and return/become output.
+   - it's race which promise execute first that reult(resolve or reject) as output will give.
+   // API
+    let promise_all = Promise.race([p1,p2,p3]);
+    promise_all.then((value) => {
+    console.log(value);                       //output: Value 1
+    })
+
+  4. Promise.any(promises)
+  - give resove value only which first resolve.
+  - not give any reject value error
+  - let p3= new Promise((resolve,reject)=>{
+      setTimeout(function(){
+        console.log("promise 3...");
+        resolve("Value  3");
+      },3000)
+    })
+
+  - race & any are similar method.
+
+  5. Promise.resolve()
+  - Make resolve promise  with given value.
+   // API
+  - let promise_all = Promise.any([p1,p2,p3]);
+    promise_all.then((value) => {
+    console.log(value);
+    })
+
+  6. Promise.reject(promise)
+  - Make reject promise with given Error.
+  - // API
+  -  let promise_all = Promise.any([p1,p2,p3]);
+     promise_all.then((value) => {
+     console.log(value);
+    })
+
+< -- Async Await -- >
+- we solve callback hell using promises and in promise there is .then (promise chain) they can make code complicated so there is also special functionality in javascript is async/await handle Promises.
+- Async/Await is the extension of promises that we get as support in the language.
+- we can make any function async & aftre we await promise inside function.
+- we can control flow of code execution using aync,await.
+-  The async and await keywords allow asynchronous, promise-based behavior to be written more easily and avoid configured promise chains.
+
+1. Async
+- A function can make async by using async keyword and allow the await keyword inside.
+  Syntax:
+- async function msg(){
+      console.log("Hello i am async");
+      return "Hello";
+    }                                       //async always retur promise
+    msg().then((value)=>{
+      console.log(value);
+    })
+- asyns function always return some promise. Other value are wrapped in a promise automatically.
+- we can do something like this: harray().then(alert);
+
+
+2. Await
+- Await Function is used  wait for promise.
+- it could be used inside the asyns block.
+- It makes the code wait until the promise returns a result.
+- it similar to "pause until done" 
+- Syntax: let v = await promise;
+
+- using await code will be easier to read & write.
+- Example:
+  (1.) use normal promise than
+    function weather(){
+     let surat_W = new Promise((resolve,reject)=>{
+      setTimeout(() => {
+        console.log("Surat Wether is.."); 
+        resolve("36 Deg");   
+      }, 2000);
+     });
+
+     let mumbai_W = new Promise((resolve,reject)=>{
+      setTimeout(() => {
+        console.log("Mumbai Wether is..");
+        resolve("30 Deg");
+      }, 2000);
+     })
+
+     surat_W.then((X)=>{
+       console.log(X);
+     })
+     mumbai_W.then((X)=>{
+      console.log(X);
+     })
+   }  
+
+   weather();
+
+  (2.) Use Async & Await
+      async function weather(){
+      let surat_W = new Promise((resolve,reject)=>{
+      setTimeout(() => {
+        console.log("Surat Wether is.."); 
+        resolve("36 Deg");   
+      }, 2000);
+      });
+
+      let mumbai_W = new Promise((resolve,reject)=>{
+      setTimeout(() => {
+        console.log("Mumbai Wether is..");
+        resolve("30 Deg");
+      }, 4000);
+      })
+      console.log("Try to get data...");
+
+     let surat_1 = await surat_W;
+     console.log("Surat: " + surat_1);
+     console.log("Try to get Mumbai  data...");
+     let mumbai_2 = await mumbai_W;
+     console.log("Mumbai: " + mumbai_2);
+     }
+     weather();
+
+- If any promise is reject than await stop the Execution.
+< -- Error Handling -- >
+- when javascript code execute , error is definitely occur. these error is occur due to fault from the programmer side or any other reason.
+- All Error can handle using following Error Handler:
+1. try...catch..
+- The try statement lets you test a block of code to check for errors.
+- The catch statement lets you handle the error if any are present.
+- try..catch syntax allow us to catch error so that the script instead of dying can do thingk more reasonable.
+- Example:
+  try{
+   consowle.log(rahaaaaul)  
+  }
+  catch(err){
+  console.log("we catch error ", err)
+  }
+  - first the code in try block is execute.
+  - if there is no error, catch is ignored else catch is execute.
+  - try..catch.. work synchronously
+  - if expression happens in scheduled code, like setTimeout, then try catch would not catch it and get Error. 
+
+
+3. throw 
+- The throw statement lets you make your own errors.
+
+4. finally :
+- The finally statement lets you execute code after try and catch.  
+- The finally block runs regardless of the result of the try-catch block.  
+
+< -- Object -- >
+- JavaScript objects are created using the {} notation, also known as object literal notation. For example, the following code creates an object that represents a person:
+
+let person = {
+    name: "John",
+    age: 30,
+    greet: function() {
+        return `Hello, my name is ${this.name} and I am ${this.age} years old.`;
+    }
+};
+
+- You can access the properties of an object using the dot notation (.) or the bracket notation ([]). For example, you can access the name and age properties of the person object using:
+
+console.log(person.name); // "John"
+console.log(person["age"]); // 30
+
+-You can also add, update and delete properties to an object by using the dot notation or the bracket notation.
+
+person.address = "New York";
+person["phone"] = "123-456-7890";
+delete person.age;
+
+< -- API -- >
+- API stands for Application Programming Interface.
+- Fetch API is used for get data overall Network.
+- featch is also promise
+- Syntax:-
+        : let promise = fetch(url,[options]) (without option get request is not sent)
+
+
+- Example:
+    <script>
+        let p = fetch("https://goweather.herokuapp.com/weather/Surat");
+        p.then((value1)=>{
+            return value1.json()
+        }).then((value2)=>{
+            console.log(value2); 
+        })
+    </script>
+
+- Getting a response is a 2 stage process
+1. a object of response class conecting "status" 7 "ok" properties.
+
+status : The HTTP Status code eg.200
+ok : true if HTTP code is under 200 - 299 if not it's false request fails
+
+2. After that we need to call another method to access the body in different formate.
+   response.text() - Read & Return a text
+   response.json() - parse the response as json
+
+   - Other Methods include: response.formData(), response.blob(), response.arrayBuffer() etc..
+- Note: we can use only one body reading method.
+        Ex. if we already got response with response.text() then response.json() would not work.
+            <script>
+               let p =fetch("https://goweather.herokuapp.com/weather/Surat")
+               p.then((response)=>{
+                   console.log(response.status);
+                   console.log(response.ok);
+                   console.log(response.text());      
+                 return response.json()
+               }).then((value2)=>{
+                return console.log(value2);
+              })
+            </script>
+
+# Response Header : available in response.headers
+
+# Request Header : To set request header in fetch, we can use headers option.
+                 : give request with header means we give header as token from our side
+    let res = fetch(url,{
+      header:{
+        Authentication:'secret'
+      }
+    }) 
+
+< -- Post Request -- >
+- When we want to send any data to big server than we use post request.
+- To make post request, we need to use featch option:
+    1.method : http method, ex:POST 
+    2.body   : the request body
+
+- Sample Post Request Example:-
+     <script>
+              let option = {
+                  method: 'POST',
+                  headers:{
+                      "Content-type":"application/json"
+                  },
+                  body: JSON.stringify({
+                      title:'Umesh',
+                      body:'Kotwal',
+                      id:1,
+                      Add:'Surat'
+                  })
+              }
+      let p = fetch('https://jsonplaceholder.typicode.com/posts',option)
+        .then((response) => response.json())
+        .then((json) => console.log(json));
+    </script>
+
+    < -- Hoisting -- >
+    - a variable can be declared after it has been used.
+    Example:-  x = 5;
+               console.log(x);
+               var x
+
+    < -- Scope -- >
+    1.Local Scope : Local scope refers to variables that are declared inside a function or a block. They can only be accessed from within that function or block.
+    Example:-   function showMessage() {
+                let message = "Hello";
+                console.log(message);  // Can access the variable
+                }
+
+                showMessage();  // Output: "Hello"
+                console.log(message);  // Error: message is not defined
+
+    2.Global Scope : Global variables can be accessed from anywhere in a program. var a=2;
+    3.Block Scope : can not access outof block 
+                    {
+                    let x = 2;
+                    }
+                    x cannot be used here
+    4.Lexical Scope : The variable is declared inside the function and can only be accessed inside that block or nested block is called lexical scope.
+    - combination of all scope call lexicl scope.
+    - that function variable can access in function out of function in entier program.
+
+
+< # ----------- local Storage ---------------- # >
+
+- local storage is web Storage object which are not sent to server with each request.
+- allows you to store key-value pairs in a browser
+- this data no go any where if we refresh page or close & restart browser.
+- Example :
+        let key = prompt("Enter Key Value")
+        let value = prompt("Enter  Value")
+        localStorage.setItem(key,value)
+        console.log(`the value of ${key} is ${localStorage.getItem(key)}`)
+- Method : 
+    setItem(key, value)  -	Stores key/value pair
+    getItem(key)	     -  Returns the value in front of the key
+    key(index)	         -  Gets the key at a given index
+    length	             - Returns the number of stored items (data)
+    removeItem(key)	     - Removes the given key with its value
+    clear()	             - Deletes everything from the storage
+
+- Example :-
+        let key = prompt("Enter Key Value")
+        let value = prompt("Enter  Value")
+        localStorage.setItem(key,value)
+        console.log(localStorage.getItem(key))
+        console.log(localStorage.key(1));
+        localStorage.valueOf(1)
+        localStorage.clear()
+
+
+
+// Cover Topic In JS
+
+< -- 1. Modern JavaScript Syntax -- >
+# Arrow Functions:
+const greet = () => console.log('Hello');
+
+# let and const (Block-scoped variables):
+const name = 'John'; // immutable
+let age = 30; // mutable
+
+#Template Literals:
+const greeting = `Hello, ${name}`;
+
+#Destructuring: Destructuring arrays and objects helps you extract values easily.
+const [a, b] = [10, 20]; // Array
+const { name, age } = person; // Object
+
+#Spread and Rest Operators (...): Spread is used to expand arrays and objects, while rest gathers them into a list.
+const arr1 = [1, 2, 3];
+const arr2 = [...arr1, 4, 5]; // Spread
+const sum = (...numbers) => numbers.reduce((a, b) => a + b); // Rest
+
+#Default Parameters:
+const greet = (name = 'Guest') => console.log(`Hello, ${name}`);
+
+#Object Short-Hand:
+const name = 'John';
+const person = { name, age: 30 };
+
+< -- 2. JavaScript Functions -- >
+
+#Pure Functions: Functions that always return the same output for the same input. React components should ideally be pure.
+const add = (a, b) => a + b;
+
+#Higher-Order Functions: Functions that take other functions as arguments or return a function. Useful in React for things like:
+ map(), filter(),and reduce().
+const numbers = [1, 2, 3];
+const doubled = numbers.map(n => n * 2); // Higher-order function
+
+< -- 3. this Keyword and Binding -- >
+Understanding how this works in JavaScript is critical when handling event handlers in React, especially in class components.
+Lexical this with Arrow Functions: Arrow functions retain the this value of the surrounding context, which is helpful in React for event handling.
+class Button extends React.Component {
+  handleClick = () => {
+    console.log(this);
+  }
+}
+
+< -- 4.Closures -- >
+Closures are important in React for things like keeping track of state in event handlers or functional updates.
+function outerFunction() {
+  let count = 0;
+  return function innerFunction() {
+    count++;
+    return count;
+  };
+}
+const increment = outerFunction();
+console.log(increment()); // 1
+console.log(increment()); // 2
+
+< -- 5.Promises and Asynchronous JavaScript -- >
+- Handling asynchronous data, such as API calls, is a key part of working with React, particularly in lifecycle methods or useEffect.
+
+# Promises:
+
+fetch('https://api.example.com/data')
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch(error => console.error(error));
+
+# Async/Await (Cleaner way to handle promises):
+async function fetchData() {
+  try {
+    const response = await fetch('https://api.example.com/data');
+    const data = await response.json();
+    console.log(data);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+< -- 6.Array Methods -- >
+React often requires manipulating arrays, particularly when rendering lists, updating state, or managing data fetched from an API.\
+
+# map(): Iterates over an array and returns a new array.
+const numbers = [1, 2, 3];
+const doubled = numbers.map(n => n * 2);
+
+# filter(): Returns a new array with items that meet a condition.
+const numbers = [1, 2, 3, 4];
+const even = numbers.filter(n => n % 2 === 0);
+
+# reduce(): Reduces an array to a single value.
+const numbers = [1, 2, 3];
+const sum = numbers.reduce((acc, curr) => acc + curr, 0);
+
+# find() and findIndex(): To search for a particular item in an array.
+const item = items.find(i => i.id === 2);
+
+< -- 7. Object-Oriented Programming (OOP) -- >
+- React components can be written using classes, so understanding object-oriented principles like inheritance, encapsulation, and constructor methods can be useful.
+# Classes:
+class Person {
+  constructor(name) {
+    this.name = name;
+  }
+  greet() {
+    console.log(`Hello, I'm ${this.name}`);
+  }
+}
+const john = new Person('John');
+john.greet();
+
+< -- 8. Destructuring and Rest/Spread Operator -- >
+# In React, you’ll often destructure props and state.
+const person = { name: 'John', age: 25 };
+const { name, age } = person;
+
+# The spread operator is used in React for immutability when updating arrays or objects in state.
+const newArray = [...oldArray, newItem];
+const newObject = { ...oldObject, newProp: value };
+
+< -- 9. Modules and Import/Export -- >
+React is modular, and you often split code across multiple files. Understanding how to import/export functions, variables, and classes is essential.
+
+// In file.js
+export const greet = () => 'Hello';
+
+// In another file
+import { greet } from './file'; -- >
+
+< -- 10.DOM Manipulation -- >
+- Although React abstracts direct DOM manipulation, knowing how to interact with the DOM can help you understand how React manages its Virtual DOM.
+- document.querySelector
+- addEventListener
+- In React, these are replaced with JSX and synthetic events, but knowledge of the DOM helps.
+
+< -- 11.Event Handling -- >
+- React uses synthetic events which are similar to native events, but you'll need to understand the basics of event handling in JavaScript.
+- document.querySelector('button').addEventListener('click', function() {
+  console.log('Button clicked');
+});
+
+< -- 12. Functional Programming Concepts -- >
+- Functional programming plays a big role in React, especially when dealing with immutability and pure functions.
+- Immutability: React relies on the immutability of state and props.
+const newArray = [...oldArray, newItem];
+Pure Functions: React components should behave like pure functions of their props.
+
+< -- 13. Error Handling -- >
+- You will often handle errors in React when fetching data or dealing with forms.
+- try/catch with async/await.
+    try {
+      // code that may throw an error
+    } catch (error) {
+      console.error(error);
+    }
+
+< -- 14. Understanding this in JavaScript -- >
+- React class components use this to refer to the instance of the component. Understanding how this works and how to bind methods properly is critical.
+- class Component extends React.Component {
+    handleClick() {
+      console.log(this);
+    }
+  }
+
+< -- 15. Prototypes and Inheritance -- >
+- Even though React doesn’t rely on inheritance as much as object composition, understanding prototypes can help you grasp certain concepts like how class components extend React.Component.
+  function Animal(name) {
+    this.name = name;
+  }
+
+  Animal.prototype.speak = function() {
+    console.log(`${this.name} makes a noise.`);
+  };
+
+// Sunday
+// ReactJS
+1. Component
+2. Hooks useState,useContext,useEffect
+3. Router, local Storage
+4. login page with Protected Route
+5. API fetch
+6. API Axios : get,post,delete,update
+7. make fake API
