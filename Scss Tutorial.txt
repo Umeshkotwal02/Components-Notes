@@ -1,0 +1,293 @@
+# ----------- SASS CSS ------------------ #
+
+- SASS stand for Syntactically awesome style sheet.
+- CSS Pre-Processor Language.
+
+# - Steps To SetUp In ReactJS
+1. npm install sass
+2. create sass file with file_name.scss extension.
+3. Import Sass File in React Component : import "./file_name.scss";
+
+# Sass files save in src--> assets--> sass-folder --> sass_files ( style.scss - it main file ) 
+
+## Variables ##
+- make _variable.scss file and import it in main style file and we can use that variables as globally in other files.
+- to create variable in sass we use $variable_name ($dollar symbol)
+- from this we make for re-use of same css property like we use red color at many times in file after if the color is change so we need to modify that color at every where so we create one variable of that color and use it every where.
+- Variable declare at top of scss file, with dollar symbol.
+- Ex. $main-color: red;
+- Use. background: $main-color;
+- Ex. $border-color: green;
+- Use. border: 1px solid $border-color;
+- use that color: use that variable_name at where you want red color,use Variable with $ symbol.
+
+## Nesting ##
+- in normal css we if in nav bar many tags like ul, li, a, so if we give css as normal css we need to write nav multiple time but using scss we do nesting direct write nav { ul{ } li{ } a{ } }
+- Normal CSS : 
+            nav ul {
+                margin: 0; 
+                padding: 0;
+                list-style: none; 
+            }
+            nav li {
+                    display: inline-block;
+                }
+            nav a { 
+                    display: block;
+                    padding: 6px 12px; 
+                    text-decoration: none;
+                }
+
+- Sass CSS :
+            nav {
+                ul {
+                    margin: 0;
+                    padding: 0;
+                    list-style: none;
+                    }
+                li {
+                    display: inline-block; 
+                    } 
+                a {
+                    display: block; 
+                    padding: 6px 12px;
+                    text-decoration: none;
+
+                    &:hover{
+                        background:pink;
+                    }
+                    }
+                }
+
+- if we want to give extra style to same tag like hover to anchor we no need to write that tag repeat we just write & (Ex. &:hover) in that same tag.
+
+## Partials & Import ##
+- we make multiple files and import that file in single main style.scss file.
+- save other multiple_file name with name of start underscore Ex. _header.scss, _variable.scss
+- from it compiler can understand it not main file it's sub-file.
+- for import file at main style.scss file for import no need write extension & underscore_ just import direct with  @import "file_name"
+- import with Ex. :- style.scss file:  @import "variable";
+                                       @import "homepage";
+- other file save with : _variable.scss, _header.scss
+
+## Mixins ##
+- using mixing we create re-useable code/style like we want give same property name like we want give border-radius multiple-time we just crete it mixing and pass the value when we use it in next time.
+- to write mixing we use @mixing variable_name($parameter or value) { property }
+- Example_1:
+- @mixing text-common($value){
+    border-radius:$value;
+  }
+
+- Example_2:
+- @mixin web-bg-color($value1, $value2) {
+  background-color: tomato;
+  border: $value1 solid $value2;
+}
+- Use :
+- .para-text {
+              color: $main-color;
+              @include web-bg-color(10px, green);
+             }
+
+## Extend ##
+- Extend means we write same property at multiple time but we just change some value so that change value css we write & give extend.className so it match both property and apply it.
+- like 
+- .abc {
+        color: red;
+        border-radius: 10px;
+        background:wight;
+      }
+
+- .xyz{
+        color: red;
+        border-radius: 10px;
+        background:wight;
+      }
+
+- as extend we write
+  . xyz {
+        color:red;
+        @extend .abc;
+       }
+
+## Operator in Sass ##
+- Equality Operator: == & !=
+- Relational Operator: <, >, <=, >=
+- String Operator & Numeric Operator: ( +, -, *, /, % ): + Concatenation Operator ( join 2 string in single )
+   $var1 : 10;
+   $var2 : 2;
+   .test{
+    padding: $var1 - $var2 + px;    // answer: 10px;
+   }
+- interpolation: #{ }.
+- now here we use Concatenation for values if we want Concatenation with classes we use interpolation: #{ }.
+  : 10 + px --> 10px 
+  : margin- + $position : 20px ----> margin-#{$position}:20px
+
+- @mixin margin($position, $unit){
+    margin-#{$position}: $unit + px;
+   }
+
+- .test{
+    @include margin(right, 20);    // output : margin=left: 20px;
+   }
+
+## Function ##
+- @function fun-name($value){
+    @return ($value/2)+px;
+}
+
+.half-column{
+    width:function-name(1000);
+}
+
+/ * Demo * /
+$container-width: 1000px;
+.para-text {
+  color: $main-color;
+  background-color: aqua;
+  width: $container-width;
+  @include web-bg-color(10px, green);
+}
+
+@function half-width($width) {
+  @return $width / 2;
+}
+@function one-third($width) {
+  @return $width / 3;
+}
+
+.para-2 {
+  width: half-width($container-width);
+  background: rgb(0, 255, 145);
+}
+.para-3 {
+  width: one-third($container-width);
+  background: rgb(0, 255, 145);
+}
+
+## ----- Number Functions ----- ##
+1. abs(); - always give absolute value like always return positive value.
+ - Ex. margin: abs(-10px);  // output: margin(10px);
+
+2. ceil(); - it return always upper-side value.
+ - Ex. - margin: ceil(4px);   // output: 0
+ - Ex. - margin: ceil(4.5px); // output: 5
+ - Ex. - margin: ceil(4.2px); // output: 5
+ - Ex. - margin: ceil(4.9px); // output: 5
+
+3. floor(); -  return down value 
+ - Ex. - margin: floor(3.0px);   // output: 3
+ - Ex. - margin: floor(3.5px); // output: 3
+ - Ex. - margin: floor(3.2px); // output: 3
+ - Ex. - margin: floor(3.9px); // output: 3
+
+4. round() - if value more then 0.5-->return upper value & less then 0.5--> return below low value 
+ - Ex. - margin: round(3.1px);   // output: 3
+ - Ex. - margin: round(3.5px); // output: 4
+ - Ex. - margin: round(3.2px); // output: 3
+ - Ex. - margin: round(3.9px); // output: 4
+
+5. max() - return max value
+- max(10px,3px,50px) // output: 50px
+- max(2px,3px,0px) // output: 3px
+
+6. min() - return min value
+- max(10px,3px,50px) // output: 10px
+- max(2px,3px,0px) // output: 0px
+
+7. percentage() - return always percentage
+- margin: percentage(0.2) // output: 20%
+- margin: percentage(2) // output: 20%
+
+8. comparable() - return true or false.
+- used for compar two units used in if condition.
+- margin:comparable(1px,2px) ; //output: true
+- margin:comparable(1px,2rem) ; //output: false
+- margin:comparable(5cm,2mm) ; //output: true
+
+9. random(); - always return any random value.
+- if we refresh value always change 
+- margin: random(10); // return 1 to 10 any random value.
+- margin: random(20); // return 1 to 20 any random value.
+- margin: random(5);  // return 1 to 5 any random value.
+
+10 unit(); - return unit
+- margin: unit(10px);  // output: "px"
+- margin: unit(20rem * 10px); // output: "rem*px"
+- margin: unit(20%);   // output: "%"
+
+11. unitless() - return true or false.
+-  if unit give return true.
+-  if not give unit return false.
+-  margin: unit(20rem * 10px); // output: "true"
+-  margin: unit(20%);   // output: "false"
+
+## ----- String Functions ----- ##
+1. quote - give quote to string Ex. font-family: quote(Arial) // Output: font-family: "Arial"
+2. unquote - give unquote to string Ex. font-family: unquote("Arial") // Output: font-family: Arial
+3. to-upper-case(Arial) : convert it string into upper-case if quote "" yes or not but it convert into upper-case. 
+                          font-family: to-upper-case("Arial") // Output: font-family:"ARIAL"
+                          font-family: to-upper-case(Arial) // Output: font-family: ARIAL
+4. to-lower-case();
+5. str-length(); - return length of string "" not-include, font-family: str-length("Arial") // Output: font-family: 5;
+6. str-index(); - return index of world in all string 
+                - font-family: str-index("umesh is good boy","good boy")    // Output: 10;
+                - first parameter is original-string, second-para is "we want find that word"
+7. str-insert("original_string", "want_add_string", index of start or add new word string)
+8. str-slice("original_string",5 (want that return string-index)) // Output: inal_string -here 1st that index is include
+8. unique-id();  font-family: unique-id(); // Output: always return any unique id randomly.
+
+##  Color Function ##
+EX: background-color: lighten($color: green, $amount: 50);
+
+1. darken("color_name", darkest-percentage) : background-color: darken("pink", 20);
+2. lighten("color_name", percentage) : background-color: lighten("pink", 20);
+3. adjust-hue("color_name", percentage)
+
+## Selector Function ##
+1. selector-nest();
+  Ex. $selector("ul","li");
+      #{$selector}{
+        width:"10px";
+      }                   // output it will create ul li as one single selector
+
+## Map Function ##
+1. map-get(key, value);
+- get-particular value we want-that.
+- $font-weight : ("regular":400, "medium":500, "bold":700);
+- .para-2 {
+   background-color: adjust-hue(  green, 20);
+   font-weight: map-get($font-weight, "medium");
+ }
+
+2. map-keys($font-weight)
+- it return all key of any map function.
+- font-weight: map-keys($font-weight); //Output: { font-weight: "regular","medium","bold" }
+
+3. map-values(variable_name)
+- it return all values of any map function.
+- font-weight: map-keys($font-weight); //Output: { font-weight: "400","500","700" }
+
+4. map-merge() - used to merge two m-function
+ : $font-weight : ("regular":400, "medium":500, "bold":700);
+    $light-weight: ("normal":100, "exnormal":200, "xxlnormal":300);
+    $merge: map-merge($font-weight, $light-weight);
+    .para-2 {
+    background-color: adjust-hue(  green, 20);
+    font-weight: map-keys($merge);
+    }
+    // output: font-weight: "regular", "medium", "bold", "normal", "exnormal", "xxlnormal";
+
+5. map-remove(variable_name, want_remove_that_key_name) - remove particular key from variable
+ : $font-weight : ("regular":400, "medium":500, "bold":700);
+    $light-weight: ("normal":100, "exnormal":200, "xxlnormal":300);
+    $rm: map-remove($font-weight, "medium");
+    .para-2 {
+    background-color: adjust-hue(  green, 20);
+    font-weight: map-keys($merge);
+    }
+    // output: font-weight:  "regular", "bold";
+
+6. map-has-keys( variable_name, key) - return single value true or false.
+  - map-has-keys($font-weight, "bold") // true
