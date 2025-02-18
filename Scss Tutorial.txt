@@ -83,7 +83,7 @@
   background-color: tomato;
   border: $value1 solid $value2;
 }
-- Use :
+- Use : // @include mixin-name;
 - .para-text {
               color: $main-color;
               @include web-bg-color(10px, green);
